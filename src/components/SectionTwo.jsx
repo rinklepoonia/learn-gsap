@@ -23,8 +23,8 @@ const SectionTwo = () => {
     return (
         <>
             <div id='section2' className='min-h-screen bg-purple pt-40'>
-                <Heading variant='secondary' green center>SectionTwo</Heading>
-               
+                <Heading  variant='secondary' green center>SectionTwo</Heading>
+
             </div>
         </>
     )

@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { SplitText } from "gsap/SplitText";
 import React, { useEffect } from "react";
 import gsap from "gsap";
@@ -16,7 +16,7 @@ const Heading = ({
     green,
     black,
     variant = "default",
-    type = "heading",
+    type = "heading", scrub = false,
     ...props
 }) => {
     const headingRef = useRef(null);
@@ -26,7 +26,8 @@ const Heading = ({
     };
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
+
         const headingSplit = SplitText.create(headingRef.current, {
             type: "chars, words,lines",
         });
@@ -35,19 +36,16 @@ const Heading = ({
             autoAlpha: 0,
             stagger: 0.1,
             duration: 0.3,
-            // repeat: -1,
-            // yoyo: true,
-            // yPercent: "random([-100, 100])",
-            // rotation: "random([-30, 30])",
-            // x: -100,
-            // from: "start"
-            // aria: hidden,
-            ScrollTrigger: {
+            scrollTrigger: {
                 trigger: headingRef.current,
-                start: "top top",
+                start: "top 160",
                 end: "+=2000",
+                markers: false,
+                scrub: scrub,
+                toggleActions: "play reverse play reverse",
             },
         });
+
         return () => {
             headingSplit.revert();
 
@@ -75,3 +73,10 @@ const Heading = ({
 };
 
 export default Heading;
+// repeat: -1,
+// yoyo: true,
+// yPercent: "random([-100, 100])",
+// rotation: "random([-30, 30])",
+// x: -100,
+// from: "start"
+// aria: hidden,

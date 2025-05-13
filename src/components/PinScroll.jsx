@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import React, { useLayoutEffect } from 'react';
-import Paragraph from './common/Paragraph';
 gsap.registerPlugin(ScrollTrigger);
 
 const PinScroll = () => {
