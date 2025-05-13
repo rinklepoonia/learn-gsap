@@ -1,16 +1,18 @@
 "use client"
-import React, { useRef } from 'react'
+import React from 'react'
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
+import SectionThree from './SectionThree'
+import SectionFour from './SectionFour'
 
 const ParallaxEffect = () => {
-    const sectionTwoRef = useRef(null);
-    const sectionOneRef = useRef(null);
+
     return (
         <div>
-            <SectionOne sectionOneRef={sectionOneRef} sectionTwoRef={sectionTwoRef} />
-            <SectionTwo sectionTwoRef={sectionTwoRef} />
-            {/* <SectionOne /> */}
+            <SectionOne />
+            <SectionTwo />
+            <SectionThree />
+            <SectionFour />
         </div>
     )
 }

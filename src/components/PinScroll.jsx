@@ -4,9 +4,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import React, { useLayoutEffect } from 'react';
+import Paragraph from './common/Paragraph';
 gsap.registerPlugin(ScrollTrigger);
 
-const SplitText = () => {
+const PinScroll = () => {
     useLayoutEffect(() => {
         let tx = gsap.context(() => {
             let zoomBox = gsap.timeline();
@@ -15,7 +16,7 @@ const SplitText = () => {
                 start: "top top",
                 end: "+=2000",
                 scrub: 1,
-                duration: 10,
+                duration: 2,
                 animation: zoomBox,
                 markers: false,
                 pin: true,
@@ -28,7 +29,7 @@ const SplitText = () => {
             }, {
                 width: "425px",
                 height:"600px",
-                delay: 2,
+              
                 duration: 3, 
             }
             );
@@ -50,10 +51,10 @@ const SplitText = () => {
         return () => tx.revert();
     }, []);
     return (
-        <>
-            {/* <div className='min-h-screen'></div> */}
+
             <div id='main_box' className='min-h-screen flex justify-center items-center bg-[#f5f5f5]'>
                 <div className='container max-w-[1180px] px-5 mx-auto'>
+
                     <div className='flex flex-row items-center gap-4'>
                         <div className='flex flex-col gap-5'>
                             {CONTENT_DATA_LIST.map((obj, i) => (
@@ -73,8 +74,8 @@ const SplitText = () => {
                     </div>
                 </div>
             </div>
-        </>
+ 
     )
 }
 
-export default SplitText
+export default PinScroll

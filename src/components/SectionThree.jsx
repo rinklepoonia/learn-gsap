@@ -1,15 +1,14 @@
-"use client"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useLayoutEffect } from 'react'
 import Heading from './common/Heading';
 import Paragraph from './common/Paragraph';
-gsap.registerPlugin(ScrollTrigger);
-const SectionTwo = () => {
+
+const SectionThree = () => {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             ScrollTrigger.create({
-                trigger: "#section2",
+                trigger: "#section3",
                 start: "top top",
                 end: "+=200%",
                 scrub: true,
@@ -22,12 +21,14 @@ const SectionTwo = () => {
     }, []);
     return (
         <>
-            <div id='section2' className='min-h-screen bg-purple pt-40'>
-                <Heading variant='secondary' green center>SectionTwo</Heading>
-               
+            <div id='section3' className='min-h-screen bg-blue-gradient  pt-40 relative z-10'>
+                <Heading variant='secondary' black center>SectionThree</Heading>
+                <Paragraph center className="capitalize pt-10 max-w-[500px] my-10">Break apart HTML text into
+                    characters, words, and/or lines for
+                    easy animation.</Paragraph>
             </div>
         </>
     )
 }
 
-export default SectionTwo
+export default SectionThree

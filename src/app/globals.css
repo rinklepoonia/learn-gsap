@@ -10,8 +10,22 @@
   --background-gradient-purple: linear-gradient(120deg,
       rgba(251, 194, 235, 1),
       rgba(166, 193, 238, 1));
+  --background-gradient-blue: linear-gradient(120deg,
+      rgba(197, 255, 242, 1),
+      rgba(166, 193, 238, 1));
+  --background-gradient-light-purple: linear-gradient(120deg,
+      rgba(251, 194, 235, 1),
+      rgba(166, 193, 238, 1),
+      rgba(132, 94, 194, 1));
 }
 
 .bg-purple {
   background: var(--background-gradient-purple);
+}
+
+.bg-blue-gradient {
+  background: var(--background-gradient-blue);
+}
+.bg-light-purple {
+  background: var(--background-gradient-light-purple);
 }
