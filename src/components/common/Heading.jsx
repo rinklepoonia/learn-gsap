@@ -35,7 +35,7 @@ const Heading = ({
         gsap.from(headingSplit.chars, {
             autoAlpha: 0,
             stagger: 0.1,
-            duration: 0.3,
+            duration: 0.2,
             scrollTrigger: {
                 trigger: headingRef.current,
                 start: "top 160",
@@ -43,6 +43,8 @@ const Heading = ({
                 markers: false,
                 scrub: scrub,
                 toggleActions: "play reverse play reverse",
+                pin: true,
+                
             },
         });
 
