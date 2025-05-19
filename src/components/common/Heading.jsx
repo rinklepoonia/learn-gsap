@@ -43,7 +43,7 @@ const Heading = ({
                 markers: false,
                 scrub: scrub,
                 toggleActions: "play reverse play reverse",
-                pin: true,
+                // pin: true,
                 
             },
         });

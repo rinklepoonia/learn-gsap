@@ -17,6 +17,15 @@
       rgba(251, 194, 235, 1),
       rgba(166, 193, 238, 1),
       rgba(132, 94, 194, 1));
+  --background-see-image: url("/assets/images/webp/see-view.webp");
+}
+
+.bg-full {
+  background-size: 100% 100% !important;
+}
+
+.bg-see-view {
+  background: var(--background-see-image);
 }
 
 .bg-purple {
@@ -26,6 +35,7 @@
 .bg-blue-gradient {
   background: var(--background-gradient-blue);
 }
+
 .bg-light-purple {
   background: var(--background-gradient-light-purple);
 }

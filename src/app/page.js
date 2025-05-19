@@ -5,14 +5,19 @@ import Image from "next/image";
 import PinScroll from "@/components/PinScroll";
 import TextSplit from "@/components/TextSplit";
 import SectionFive from "@/components/SectionFive";
+import SeeScroll from "@/components/SeeScroll";
+import ImageSize from "@/components/ImageSize";
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <TextSplit />
-      <PinScroll />
-      <ParallaxEffect />
-      <SectionFive/>
+      {/* <PinScroll /> */}
+      {/* <ParallaxEffect /> */}
+      <ImageSize />
+      <SeeScroll />
+
+      <SectionFive />
     </div>
   );
 }

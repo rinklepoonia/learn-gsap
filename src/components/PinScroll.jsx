@@ -54,7 +54,7 @@ const PinScroll = () => {
             <div id='main_box' className='min-h-screen flex justify-center items-center bg-[#f5f5f5]'>
                 <div className='container max-w-[1180px] px-5 mx-auto'>
 
-                    <div className='flex flex-row items-center gap-4'>
+                    <div className='flex md:flex-row flex-col items-center gap-4'>
                         <div className='flex flex-col gap-5'>
                             {CONTENT_DATA_LIST.map((obj, i) => (
                                 <div key={i}>
