@@ -7,6 +7,7 @@ import TextSplit from "@/components/TextSplit";
 import SectionFive from "@/components/SectionFive";
 import SeeScroll from "@/components/SeeScroll";
 import ImageSize from "@/components/ImageSize";
+import ImageChanging from "@/components/ImageChanging";
 
 export default function Home() {
   return (
@@ -14,8 +15,9 @@ export default function Home() {
       <TextSplit />
       {/* <PinScroll /> */}
       {/* <ParallaxEffect /> */}
-      <ImageSize />
-      <SeeScroll />
+      {/* <ImageSize /> */}
+      <ImageChanging />
+      {/* <SeeScroll /> */}
 
       <SectionFive />
     </div>
