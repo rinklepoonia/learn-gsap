@@ -18,7 +18,19 @@
       rgba(166, 193, 238, 1),
       rgba(132, 94, 194, 1));
   --background-see-image: url("/assets/images/webp/see-view.webp");
+  --background-hero-gsap-field: url("/assets/images/webp/gsap-field-bg.webp")
 }
+
+.bg-hero-gsap-field {
+  background-image: var(--background-hero-gsap-field);
+}
+
+.bg-full {
+  background-size: 100% 100%;
+}
+
+
+
 
 .bg-full {
   background-size: 100% 100% !important;

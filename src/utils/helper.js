@@ -15,3 +15,30 @@ export const IMAGE_CHANGE_DATA_LIST = [
         title: "Elephant",
     },
 ]
+
+export const NAV_LINK_LIST = [
+    {
+        link: "About",
+        url: "#"
+    },
+    {
+        link: "How It Works",
+        url: "#"
+    },
+    {
+        link: "Services",
+        url: "#"
+    },
+    {
+        link: "Testimonials",
+        url: "#"
+    },
+    {
+        link: "Why Us",
+        url: "#"
+    },
+    {
+        link: "FAQ",
+        url: "#"
+    },
+]

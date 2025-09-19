@@ -8,16 +8,21 @@ import SectionFive from "@/components/SectionFive";
 import SeeScroll from "@/components/SeeScroll";
 import ImageSize from "@/components/ImageSize";
 import ImageChanging from "@/components/ImageChanging";
+import GsapResponsive from "@/components/GsapResponsive";
+import NavBar from "@/components/common/NavBar";
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
+      {/* <NavBar /> */}
       <TextSplit />
+
       {/* <PinScroll /> */}
       {/* <ParallaxEffect /> */}
       {/* <ImageSize /> */}
-      <ImageChanging />
+      {/* <ImageChanging /> */}
       {/* <SeeScroll /> */}
+      <GsapResponsive />
 
       <SectionFive />
     </div>

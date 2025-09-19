@@ -12,7 +12,7 @@ export default function SplitTextAnimation() {
 
     return (
 
-        <div className="min-h-[600px] pt-20">
+        <div className="min-h-screen pt-20">
             <div className="container mx-auto max-w-[1180px] px-5">
                 {/* <h1 id="headingSplit" className="text-4xl text-center mt-20 text-orange-500  font-bold">
                     Welcome To Gsap Country
