@@ -1,7 +1,11 @@
 "use client"
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useEffect } from "react";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
     useEffect(() => {
@@ -28,14 +32,42 @@ const Hero = () => {
         tl.to(".hero-container", {
             onComplete: () => {
                 document.querySelector(".hero-container")?.classList.remove("bg-black");
-                document.querySelector(".hero-container")?.classList.add("bg-hero-gsap-field", "bg-full");
             },
         });
+        tl.to("#heroVideo", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+        }, "<");
+
+        // Pin the hero section during the MoreThenMotion scroll
+        ScrollTrigger.create({
+            trigger: ".hero-container",
+            start: "top top",
+            end: () => "+=" + (document.querySelector(".more-then-motion-container")?.offsetHeight || 4000),
+            pin: true,
+            pinSpacing: false,
+            anticipatePin: 1
+        });
+
+        // Cleanup function
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
     }, []);
 
 
     return (
-        <div className="hero-container bg-black min-h-screen flex relative z-10">
+        <div className="hero-container bg-black min-h-screen flex relative z-10 overflow-hidden">
+            <video
+                id="heroVideo"
+                className="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                src="/assets/hero-video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+            />
             <Image id="fadeLogo"
                 className="opacity-10 absolute top-1/2 left-8"
                 width={300}

@@ -158,7 +158,7 @@ const MoreThenMotion = () => {
     }, [])
 
     return (
-        <div className='min-h-screen bg-[#ebe8db] pt-12 pb-[200px]'>
+        <div className='more-then-motion-container min-h-screen bg-[#ebe8db] pt-12 pb-[200px] relative z-20'>
             {/* Fixed Content Areas - Outside of sections to avoid positioning issues */}
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10' ref={part1Ref}>
                 <div className='flex flex-col gap-4'>
