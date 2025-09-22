@@ -17,28 +17,27 @@ const Hero = () => {
         );
         tl.to("#logoOverlay", {
             top: "2rem",
-            duration: 1,
-            ease: "power2.out",
+            duration: 0.8,
+            // ease: "power2.out",
         });
         tl.to(
             ["#logoOverlay", "#fadeLogo"],
             {
                 top: "2rem",
-                duration: 1,
+                duration: 0.8,
                 ease: "power2.out",
             },
             "<"
         );
-        tl.to(".hero-container", {
-            onComplete: () => {
-                document.querySelector(".hero-container")?.classList.remove("bg-black");
-            },
-        });
         tl.to("#heroVideo", {
             opacity: 1,
             duration: 1,
             ease: "power2.out",
-        }, "<");
+            onComplete: () => {
+                // Remove black background only after video is fully visible
+                document.querySelector(".hero-container")?.classList.remove("bg-black");
+            }
+        });
 
         // Pin the hero section during the MoreThenMotion scroll
         ScrollTrigger.create({

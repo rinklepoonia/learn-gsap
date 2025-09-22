@@ -57,7 +57,7 @@ const MoreThenMotion = () => {
             })
 
             // Animate text characters simultaneously
-            if (textSplit) {
+          if (textSplit) {
                 tl.to(textSplit.chars, {
                     y: 0,
                     opacity: 1,
@@ -65,7 +65,7 @@ const MoreThenMotion = () => {
                     stagger: 0.02,
                     // ease: "power2.out"
                 }, "-=0.1") // Start text animation slightly before container finishes
-            }
+            }  
 
             return tl
         }
@@ -91,7 +91,7 @@ const MoreThenMotion = () => {
                 visibility: "hidden",
                 y: yTarget,
                 duration: duration,
-                ease: "power2.in"
+                // ease: "power2.in"
             }, "-=0.1") // Start container hide slightly before text finishes
 
             return tl
@@ -126,7 +126,7 @@ const MoreThenMotion = () => {
                 gsap.to(part1Ref.current, {
                     opacity: 0,
                     y: "-100%",
-                    duration: 0.8,
+                    duration: 0.2,
                     ease: "power2.inOut"
                 })
                 // Show Part 2
@@ -154,7 +154,7 @@ const MoreThenMotion = () => {
                     ease: "power2.inOut"
                 })
                 // Show Part 3
-                showPartWithText(part3Ref.current, textSplits.part3, 0.6, 0.2)
+                showPartWithText(part3Ref.current, textSplits.part3, 0.8, 0.2)
             },
             onLeaveBack: () => {
                 // Reverse: Show Part 2
@@ -178,7 +178,7 @@ const MoreThenMotion = () => {
                     ease: "power2.inOut"
                 })
                 // Show Part 4
-                showPartWithText(part4Ref.current, textSplits.part4, 0.6, 0.2)
+                showPartWithText(part4Ref.current, textSplits.part4, 0.8, 0.2)
             },
             onLeaveBack: () => {
                 // Reverse: Show Part 3
@@ -199,7 +199,7 @@ const MoreThenMotion = () => {
             {/* Fixed Content Areas - Hidden initially to prevent flash on page load */}
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part1Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
-                    <p className='font-normal text-sm uppercase text-black'>eene</p>
+                    <p className='font-normal text-sm uppercase text-black text-center'>eene</p>
                     <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part1Ref}>More then motion</h3>
                 </div>
                 <Image width={288} height={209} src="/assets/images/svg/wavy-line.svg" alt='wavy-line' className='absolute top-0 z-0' />
@@ -207,7 +207,7 @@ const MoreThenMotion = () => {
 
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part2Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
-                    <p className='font-normal text-sm uppercase text-black'>meeny</p>
+                    <p className='font-normal text-sm uppercase text-black text-center'>meeny</p>
                     <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part2Ref}>A field of expression</h3>
                 </div>
                 <Image width={288} height={223} src="/assets/images/svg/eye-icon.svg" alt='eve-icon' className='absolute top-[-55%] left-[-20%] z-0' />
@@ -215,7 +215,7 @@ const MoreThenMotion = () => {
 
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part3Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
-                    <p className='font-normal text-sm uppercase text-black'>miny</p>
+                    <p className='font-normal text-sm uppercase text-black text-center'>miny</p>
                     <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part3Ref}>Build on GSAP</h3>
                 </div>
                 <Image width={288} height={223} src="/assets/images/svg/gsap-icon.svg" alt='gsap-icon' className='absolute top-[-45%] left-[-10%] z-0' />
@@ -223,7 +223,7 @@ const MoreThenMotion = () => {
 
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part4Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
-                    <p className='font-normal text-sm uppercase text-black'>moe</p>
+                    <p className='font-normal text-sm uppercase text-black text-center'>moe</p>
                     <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part4Ref}>Rooted in real jov</h3>
                 </div>
                 <Image width={216} height={249} src="/assets/images/svg/smiley-icon.svg" alt='smiley-icon' className='absolute top-[-15%] right-[-10%] z-0' />
@@ -258,10 +258,10 @@ const MoreThenMotion = () => {
                 {/* PART 4 */}
                 <div className='md:mt-[535px] mt-[200px] relative' ref={section4Ref}>
                     <Image width={306} height={187} className='rounded-xl object-cover mt-[95px] sm:ml-auto sm:mr-[15%] mr-auto ml-[4%] max-sm:size-[250px]' src="/assets/images/png/girl-eating-grass.png" alt='girl-eating-grass' />
-                    <Image width={158} height={158} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-[5%] max-sm:ml-auto' src="/assets/images/png/specs-boy.png" alt='specs-boy' />
+                    <Image width={158} height={158} className='rounded-xl object-cover lg:mt-[-95px] mt-[4%] ml-[5%] max-sm:ml-auto' src="/assets/images/png/specs-boy.png" alt='specs-boy' />
                     <div className='md:mt-[70px]'>
                         <Image width={356} height={356} className='rounded-xl object-cover md:mt-[95px] mt-[4%] md:ml-auto ml-[4%] max-sm:size-[250px]' src="/assets/images/png/playing-chees.png" alt='playing-chees' />
-                        <Image width={158} height={158} className='rounded-xl object-cover md:mt-[227px] mt-[4%] md:ml-[10%] ml-auto md:mr-0 mr-[2%]' src="/assets/images/png/see-through-lens.png" alt='see-through-lens' />
+                        <Image width={158} height={158} className='rounded-xl object-cover lg:mt-[-50px] mt-[4%] md:ml-[10%] ml-auto md:mr-0 mr-[2%]' src="/assets/images/png/see-through-lens.png" alt='see-through-lens' />
                     </div>
                 </div>
             </div>
