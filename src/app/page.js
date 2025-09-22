@@ -14,14 +14,14 @@ import NavBar from "@/components/common/NavBar";
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      {/* <NavBar /> */}
+      <NavBar />
       <TextSplit />
 
-      {/* <PinScroll /> */}
-      {/* <ParallaxEffect /> */}
-      {/* <ImageSize /> */}
-      {/* <ImageChanging /> */}
-      {/* <SeeScroll /> */}
+      <PinScroll />
+      <ParallaxEffect />
+      <ImageSize />
+      <ImageChanging />
+      <SeeScroll />
       <GsapResponsive />
 
       <SectionFive />
