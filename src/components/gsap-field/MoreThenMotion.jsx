@@ -21,12 +21,33 @@ const MoreThenMotion = () => {
     const section4Ref = useRef(null)
 
     useEffect(() => {
-        // Set initial states
-        gsap.set([part2Ref.current, part3Ref.current, part4Ref.current], {
+        // Set initial states - all parts hidden initially
+        gsap.set([part1Ref.current, part2Ref.current, part3Ref.current, part4Ref.current], {
             opacity: 0,
             y: 50
         })
-        gsap.set(part1Ref.current, { opacity: 1, y: "50%" })
+
+        // ScrollTrigger to show part1 when MoreThenMotion section is scrolled 10%
+        ScrollTrigger.create({
+            trigger: ".more-then-motion-container",
+            start: "20% bottom",
+            onEnter: () => {
+                gsap.to(part1Ref.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.2,
+                    ease: "power2.out"
+                })
+            },
+            onLeaveBack: () => {
+                gsap.to(part1Ref.current, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.2,
+                    ease: "power2.out"
+                })
+            }
+        })
 
         // Animation for Part 1 to Part 2 transition
         ScrollTrigger.create({
@@ -37,7 +58,7 @@ const MoreThenMotion = () => {
                 // Hide Part 1
                 gsap.to(part1Ref.current, {
                     opacity: 0,
-                    y:"-100%",
+                    y: "-100%",
                     duration: 0.8,
                     ease: "power2.inOut"
                 })
@@ -55,14 +76,14 @@ const MoreThenMotion = () => {
                 gsap.to(part1Ref.current, {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 0.2,
                     ease: "power2.inOut"
                 })
                 // Hide Part 2
                 gsap.to(part2Ref.current, {
                     opacity: 0,
                     y: 50,
-                    duration: 0.8,
+                    duration: 0.2,
                     delay: 0.2,
                     ease: "power2.inOut"
                 })
@@ -79,14 +100,14 @@ const MoreThenMotion = () => {
                 gsap.to(part2Ref.current, {
                     opacity: 0,
                     y: -50,
-                    duration: 0.8,
+                    duration: 0.2,
                     ease: "power2.inOut"
                 })
                 // Show Part 3
                 gsap.to(part3Ref.current, {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 0.2,
                     delay: 0.2,
                     ease: "power2.inOut"
                 })
@@ -96,14 +117,14 @@ const MoreThenMotion = () => {
                 gsap.to(part2Ref.current, {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 0.2,
                     ease: "power2.inOut"
                 })
                 // Hide Part 3
                 gsap.to(part3Ref.current, {
                     opacity: 0,
                     y: 50,
-                    duration: 0.8,
+                    duration: 0.2,
                     delay: 0.2,
                     ease: "power2.inOut"
                 })
@@ -120,14 +141,14 @@ const MoreThenMotion = () => {
                 gsap.to(part3Ref.current, {
                     opacity: 0,
                     y: -50,
-                    duration: 0.8,
+                    duration: 0.2,
                     ease: "power2.inOut"
                 })
                 // Show Part 4
                 gsap.to(part4Ref.current, {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 0.2,
                     delay: 0.2,
                     ease: "power2.inOut"
                 })
@@ -137,14 +158,14 @@ const MoreThenMotion = () => {
                 gsap.to(part3Ref.current, {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 0.2,
                     ease: "power2.inOut"
                 })
                 // Hide Part 4
                 gsap.to(part4Ref.current, {
                     opacity: 0,
                     y: 50,
-                    duration: 0.8,
+                    duration: 0.2,
                     delay: 0.2,
                     ease: "power2.inOut"
                 })
@@ -195,36 +216,36 @@ const MoreThenMotion = () => {
             <div className='px-5 max-w-[1191px] mx-auto'>
                 {/* PART 1 */}
                 <div className='relative' ref={section1Ref}>
-                    <div className='flex justify-between mb-[300px]'>
+                    <div className='flex flex-wrap gap-2 justify-between md:mb-[300px] mb-[200px]'>
                         <p className='text-sm font-normal uppercase text-[#2A2119] max-w-[160px]'>scroll gently into that good field</p>
                         <p className='text-4xl text-[#2A2119] font-medium max-w-[577px]'
                         >Somewhere between the code and the grass, we found motion worth keeping —gentle, curious, and made with care.</p>
                     </div>
                     <Image width={356} height={356} className='rounded-xl object-cover ml-[5%]' src="/assets/images/webp/eating-biskuit.webp" alt='eating-biskuit' />
-                    <Image width={269} height={323} className='rounded-xl object-cover ml-auto mr-[3%]' src="/assets/images/webp/watch-time.webp" alt='watch-time' />
-                    <Image width={158} height={158} className='rounded-xl object-cover ml-[30%]' src="/assets/images/webp/watch.webp" alt='watch' />
+                    <Image width={269} height={323} className='rounded-xl object-cover ml-auto mr-[3%] md:mt-0 mt-[4%]' src="/assets/images/webp/watch-time.webp" alt='watch-time' />
+                    <Image width={158} height={158} className='rounded-xl object-cover ml-[30%] md:mt-0 mt-[4%]' src="/assets/images/webp/watch.webp" alt='watch' />
                 </div>
 
                 {/* PART 2 */}
-                <div className='relative mt-[170px]' ref={section2Ref}>
-                    <Image width={356} height={356} className='rounded-xl object-cover ml-[7%]' src="/assets/images/png/two-girls.png" alt='two-girls' />
+                <div className='relative md:mt-[170px] mt-[100px]' ref={section2Ref}>
+                    <Image width={356} height={356} className='rounded-xl object-cover ml-[4%]' src="/assets/images/png/two-girls.png" alt='two-girls' />
                 </div>
 
 
                 {/* PART 3 */}
-                <div className='relative mt-[430px]' ref={section3Ref}>
+                <div className='relative md:mt-[430px] mt-[200px]' ref={section3Ref}>
                     <Image width={356} height={356} className='rounded-xl object-cover ml-auto' src="/assets/images/png/tent.png" alt='tent' />
-                    <Image width={356} height={356} className='rounded-xl object-cover mt-[-80px] ml-[7%]' src="/assets/images/png/flower.png" alt='flower' />
-                    <Image width={158} height={158} className='rounded-xl object-cover mt-[95px] ml-auto mr-[15%]' src="/assets/images/png/skelton.png" alt='flower' />
+                    <Image width={356} height={356} className='rounded-xl object-cover md:mt-[-80px] mt-[4%] ml-[5%]' src="/assets/images/png/flower.png" alt='flower' />
+                    <Image width={158} height={158} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-auto mr-[15%]' src="/assets/images/png/skelton.png" alt='flower' />
                 </div>
 
                 {/* PART 4 */}
-                <div className='mt-[535px] relative' ref={section4Ref}>
+                <div className='md:mt-[535px] mt-[200px] relative' ref={section4Ref}>
                     <Image width={306} height={187} className='rounded-xl object-cover mt-[95px] ml-auto mr-[15%]' src="/assets/images/png/girl-eating-grass.png" alt='girl-eating-grass' />
-                    <Image width={158} height={158} className='rounded-xl object-cover mt-[95px] ml-[5%]' src="/assets/images/png/specs-boy.png" alt='specs-boy' />
-                    <div className='mt-[70px]'>
-                        <Image width={356} height={356} className='rounded-xl object-cover mt-[95px] ml-[5%]' src="/assets/images/png/playing-chees.png" alt='playing-chees' />
-                        <Image width={158} height={158} className='rounded-xl object-cover mt-[227px] ml-[10%]' src="/assets/images/png/see-through-lens.png" alt='see-through-lens' />
+                    <Image width={158} height={158} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-[5%]' src="/assets/images/png/specs-boy.png" alt='specs-boy' />
+                    <div className='md:mt-[70px]'>
+                        <Image width={356} height={356} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-[4%]' src="/assets/images/png/playing-chees.png" alt='playing-chees' />
+                        <Image width={158} height={158} className='rounded-xl object-cover md:mt-[227px] mt-[4%] md:ml-[10%] ml-auto md:mr-0 mr-[3%]' src="/assets/images/png/see-through-lens.png" alt='see-through-lens' />
                     </div>
                 </div>
             </div>
