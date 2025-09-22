@@ -61,9 +61,9 @@ const MoreThenMotion = () => {
                 tl.to(textSplit.chars, {
                     y: 0,
                     opacity: 1,
-                    duration: 0.6,
+                    duration: 0.2,
                     stagger: 0.02,
-                    ease: "power2.out"
+                    // ease: "power2.out"
                 }, "-=0.1") // Start text animation slightly before container finishes
             }
 
@@ -200,7 +200,7 @@ const MoreThenMotion = () => {
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part1Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
                     <p className='font-normal text-sm uppercase text-black'>eene</p>
-                    <h3 className='text-5xl text-black' ref={h3Part1Ref}>More then motion</h3>
+                    <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part1Ref}>More then motion</h3>
                 </div>
                 <Image width={288} height={209} src="/assets/images/svg/wavy-line.svg" alt='wavy-line' className='absolute top-0 z-0' />
             </div>
@@ -208,7 +208,7 @@ const MoreThenMotion = () => {
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part2Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
                     <p className='font-normal text-sm uppercase text-black'>meeny</p>
-                    <h3 className='text-5xl text-black' ref={h3Part2Ref}>A field of expression</h3>
+                    <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part2Ref}>A field of expression</h3>
                 </div>
                 <Image width={288} height={223} src="/assets/images/svg/eye-icon.svg" alt='eve-icon' className='absolute top-[-55%] left-[-20%] z-0' />
             </div>
@@ -216,7 +216,7 @@ const MoreThenMotion = () => {
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part3Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
                     <p className='font-normal text-sm uppercase text-black'>miny</p>
-                    <h3 className='text-5xl text-black' ref={h3Part3Ref}>Build on GSAP</h3>
+                    <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part3Ref}>Build on GSAP</h3>
                 </div>
                 <Image width={288} height={223} src="/assets/images/svg/gsap-icon.svg" alt='gsap-icon' className='absolute top-[-45%] left-[-10%] z-0' />
             </div>
@@ -224,7 +224,7 @@ const MoreThenMotion = () => {
             <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part4Ref}>
                 <div className='flex flex-col gap-4 relative z-10'>
                     <p className='font-normal text-sm uppercase text-black'>moe</p>
-                    <h3 className='text-5xl text-black' ref={h3Part4Ref}>Rooted in real jov</h3>
+                    <h3 className='sm:text-5xl text-4xl text-black' ref={h3Part4Ref}>Rooted in real jov</h3>
                 </div>
                 <Image width={216} height={249} src="/assets/images/svg/smiley-icon.svg" alt='smiley-icon' className='absolute top-[-15%] right-[-10%] z-0' />
             </div>
@@ -237,31 +237,31 @@ const MoreThenMotion = () => {
                         <p className='text-4xl text-[#2A2119] font-medium max-w-[577px]'
                         >Somewhere between the code and the grass, we found motion worth keeping —gentle, curious, and made with care.</p>
                     </div>
-                    <Image width={356} height={356} className='rounded-xl object-cover ml-[5%]' src="/assets/images/webp/eating-biskuit.webp" alt='eating-biskuit' />
-                    <Image width={269} height={323} className='rounded-xl object-cover ml-auto mr-[3%] md:mt-0 mt-[4%]' src="/assets/images/webp/watch-time.webp" alt='watch-time' />
-                    <Image width={158} height={158} className='rounded-xl object-cover ml-[30%] md:mt-0 mt-[4%]' src="/assets/images/webp/watch.webp" alt='watch' />
+                    <Image width={356} height={356} className='rounded-xl object-cover ml-[5%] max-sm:size-[250px]' src="/assets/images/webp/eating-biskuit.webp" alt='eating-biskuit' />
+                    <Image width={269} height={323} className='rounded-xl object-cover ml-auto mr-[3%] md:mt-0 mt-[4%] max-sm:size-[200px]' src="/assets/images/webp/watch-time.webp" alt='watch-time' />
+                    <Image width={158} height={158} className='rounded-xl object-cover md:ml-[30%] ml-[5%] md:mt-0 mt-[4%]' src="/assets/images/webp/watch.webp" alt='watch' />
                 </div>
 
                 {/* PART 2 */}
                 <div className='relative md:mt-[170px] mt-[100px]' ref={section2Ref}>
-                    <Image width={356} height={356} className='rounded-xl object-cover ml-[4%]' src="/assets/images/png/two-girls.png" alt='two-girls' />
+                    <Image width={356} height={356} className='rounded-xl object-cover sm:ml-[4%] max-sm:mx-auto max-sm:size-[250px]' src="/assets/images/png/two-girls.png" alt='two-girls' />
                 </div>
 
 
                 {/* PART 3 */}
                 <div className='relative md:mt-[430px] mt-[200px]' ref={section3Ref}>
-                    <Image width={356} height={356} className='rounded-xl object-cover ml-auto' src="/assets/images/png/tent.png" alt='tent' />
-                    <Image width={356} height={356} className='rounded-xl object-cover lg:mt-[-80px] mt-[4%] ml-[5%]' src="/assets/images/png/flower.png" alt='flower' />
-                    <Image width={158} height={158} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-auto mr-[15%]' src="/assets/images/png/skelton.png" alt='flower' />
+                    <Image width={356} height={356} className='rounded-xl object-cover ml-auto max-sm:size-[250px]' src="/assets/images/png/tent.png" alt='tent' />
+                    <Image width={356} height={356} className='rounded-xl object-cover lg:mt-[-80px] mt-[4%] ml-[5%] max-sm:size-[250px]' src="/assets/images/png/flower.png" alt='flower' />
+                    <Image width={158} height={158} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-auto sm:mr-[15%] mr-[5%]' src="/assets/images/png/skelton.png" alt='flower' />
                 </div>
 
                 {/* PART 4 */}
                 <div className='md:mt-[535px] mt-[200px] relative' ref={section4Ref}>
-                    <Image width={306} height={187} className='rounded-xl object-cover mt-[95px] ml-auto mr-[15%]' src="/assets/images/png/girl-eating-grass.png" alt='girl-eating-grass' />
-                    <Image width={158} height={158} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-[5%]' src="/assets/images/png/specs-boy.png" alt='specs-boy' />
+                    <Image width={306} height={187} className='rounded-xl object-cover mt-[95px] sm:ml-auto sm:mr-[15%] mr-auto ml-[4%] max-sm:size-[250px]' src="/assets/images/png/girl-eating-grass.png" alt='girl-eating-grass' />
+                    <Image width={158} height={158} className='rounded-xl object-cover md:mt-[95px] mt-[4%] ml-[5%] max-sm:ml-auto' src="/assets/images/png/specs-boy.png" alt='specs-boy' />
                     <div className='md:mt-[70px]'>
-                        <Image width={356} height={356} className='rounded-xl object-cover md:mt-[95px] mt-[4%] md:ml-auto ml-[4%]' src="/assets/images/png/playing-chees.png" alt='playing-chees' />
-                        <Image width={158} height={158} className='rounded-xl object-cover md:mt-[227px] mt-[4%] md:ml-[10%] ml-auto md:mr-0 mr-[3%]' src="/assets/images/png/see-through-lens.png" alt='see-through-lens' />
+                        <Image width={356} height={356} className='rounded-xl object-cover md:mt-[95px] mt-[4%] md:ml-auto ml-[4%] max-sm:size-[250px]' src="/assets/images/png/playing-chees.png" alt='playing-chees' />
+                        <Image width={158} height={158} className='rounded-xl object-cover md:mt-[227px] mt-[4%] md:ml-[10%] ml-auto md:mr-0 mr-[2%]' src="/assets/images/png/see-through-lens.png" alt='see-through-lens' />
                     </div>
                 </div>
             </div>
