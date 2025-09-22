@@ -24,6 +24,7 @@ const MoreThenMotion = () => {
         // Set initial states - all parts hidden initially
         gsap.set([part1Ref.current, part2Ref.current, part3Ref.current, part4Ref.current], {
             opacity: 0,
+            visibility: "hidden",
             y: 50
         })
 
@@ -34,6 +35,7 @@ const MoreThenMotion = () => {
             onEnter: () => {
                 gsap.to(part1Ref.current, {
                     opacity: 1,
+                    visibility: "visible",
                     y: 0,
                     duration: 0.2,
                     ease: "power2.out"
@@ -42,6 +44,7 @@ const MoreThenMotion = () => {
             onLeaveBack: () => {
                 gsap.to(part1Ref.current, {
                     opacity: 0,
+                    visibility: "hidden",
                     y: 50,
                     duration: 0.2,
                     ease: "power2.out"
@@ -65,6 +68,7 @@ const MoreThenMotion = () => {
                 // Show Part 2
                 gsap.to(part2Ref.current, {
                     opacity: 1,
+                    visibility: "visible",
                     y: 0,
                     duration: 0.8,
                     delay: 0.2,
@@ -75,6 +79,7 @@ const MoreThenMotion = () => {
                 // Reverse: Show Part 1
                 gsap.to(part1Ref.current, {
                     opacity: 1,
+                    visibility: "visible",
                     y: 0,
                     duration: 0.2,
                     ease: "power2.inOut"
@@ -82,6 +87,7 @@ const MoreThenMotion = () => {
                 // Hide Part 2
                 gsap.to(part2Ref.current, {
                     opacity: 0,
+                    visibility: "hidden",
                     y: 50,
                     duration: 0.2,
                     delay: 0.2,
@@ -106,6 +112,7 @@ const MoreThenMotion = () => {
                 // Show Part 3
                 gsap.to(part3Ref.current, {
                     opacity: 1,
+                    visibility: "visible",
                     y: 0,
                     duration: 0.2,
                     delay: 0.2,
@@ -116,6 +123,7 @@ const MoreThenMotion = () => {
                 // Reverse: Show Part 2
                 gsap.to(part2Ref.current, {
                     opacity: 1,
+                    visibility: "visible",
                     y: 0,
                     duration: 0.2,
                     ease: "power2.inOut"
@@ -123,6 +131,7 @@ const MoreThenMotion = () => {
                 // Hide Part 3
                 gsap.to(part3Ref.current, {
                     opacity: 0,
+                    visibility: "hidden",
                     y: 50,
                     duration: 0.2,
                     delay: 0.2,
@@ -147,6 +156,7 @@ const MoreThenMotion = () => {
                 // Show Part 4
                 gsap.to(part4Ref.current, {
                     opacity: 1,
+                    visibility: "visible",
                     y: 0,
                     duration: 0.2,
                     delay: 0.2,
@@ -157,6 +167,7 @@ const MoreThenMotion = () => {
                 // Reverse: Show Part 3
                 gsap.to(part3Ref.current, {
                     opacity: 1,
+                    visibility: "visible",
                     y: 0,
                     duration: 0.2,
                     ease: "power2.inOut"
@@ -164,6 +175,7 @@ const MoreThenMotion = () => {
                 // Hide Part 4
                 gsap.to(part4Ref.current, {
                     opacity: 0,
+                    visibility: "hidden",
                     y: 50,
                     duration: 0.2,
                     delay: 0.2,
@@ -180,8 +192,8 @@ const MoreThenMotion = () => {
 
     return (
         <div className='more-then-motion-container min-h-screen bg-[#ebe8db] pt-12 pb-[200px] relative z-20'>
-            {/* Fixed Content Areas - Outside of sections to avoid positioning issues */}
-            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10' ref={part1Ref}>
+            {/* Fixed Content Areas - Hidden initially to prevent flash on page load */}
+            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part1Ref}>
                 <div className='flex flex-col gap-4'>
                     <p className='font-normal text-sm uppercase text-black'>eene</p>
                     <h3 className='text-5xl text-black'>More then motion</h3>
@@ -189,7 +201,7 @@ const MoreThenMotion = () => {
                 <Image width={288} height={209} src="/assets/images/svg/wavy-line.svg" alt='wavy-line' />
             </div>
 
-            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10' ref={part2Ref}>
+            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part2Ref}>
                 <div className='flex flex-col gap-4'>
                     <p className='font-normal text-sm uppercase text-black'>meeny</p>
                     <h3 className='text-5xl text-black'>A field of expression</h3>
@@ -197,7 +209,7 @@ const MoreThenMotion = () => {
                 <Image width={288} height={223} src="/assets/images/svg/eye-icon.svg" alt='eve-icon' />
             </div>
 
-            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10' ref={part3Ref}>
+            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part3Ref}>
                 <div className='flex flex-col gap-4'>
                     <p className='font-normal text-sm uppercase text-black'>miny</p>
                     <h3 className='text-5xl text-black'>Build on GSAP</h3>
@@ -205,7 +217,7 @@ const MoreThenMotion = () => {
                 <Image width={288} height={223} src="/assets/images/svg/gsap-icon.svg" alt='gsap-icon' />
             </div>
 
-            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10' ref={part4Ref}>
+            <div className='fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 invisible' ref={part4Ref}>
                 <div className='flex flex-col gap-4'>
                     <p className='font-normal text-sm uppercase text-black'>moe</p>
                     <h3 className='text-5xl text-black'>Rooted in real jov</h3>
