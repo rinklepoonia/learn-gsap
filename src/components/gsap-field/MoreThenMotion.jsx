@@ -116,27 +116,21 @@ const MoreThenMotion = () => {
             }
         })
 
-        // Animation for Part 1 to Part 2 transition
         ScrollTrigger.create({
             trigger: section1Ref.current,
             start: "bottom center",
             end: "bottom top",
             onEnter: () => {
-                // Hide Part 1
-                gsap.to(part1Ref.current, {
-                    opacity: 0,
-                    y: "-100%",
-                    duration: 0.2,
-                    ease: "power2.inOut"
-                })
-                // Show Part 2
-                showPartWithText(part2Ref.current, textSplits.part2, 0.8, 0.2)
+                // Hide Part 1 quickly
+                hidePartWithText(part1Ref.current, textSplits.part1, 50, 0.15, 0);
+                // Show Part 2 with a slight delay
+                showPartWithText(part2Ref.current, textSplits.part2, 0.8, 0.18);
             },
             onLeaveBack: () => {
-                // Reverse: Show Part 1
-                showPartWithText(part1Ref.current, textSplits.part1)
-                // Hide Part 2
-                hidePartWithText(part2Ref.current, textSplits.part2, 50, 0.2, 0.2)
+                // Reverse: Show Part 1 with a slight delay
+                showPartWithText(part1Ref.current, textSplits.part1, 0.6, 0.18);
+                // Hide Part 2 quickly
+                hidePartWithText(part2Ref.current, textSplits.part2, 50, 0.15, 0);
             }
         })
 
@@ -146,21 +140,12 @@ const MoreThenMotion = () => {
             start: "bottom center",
             end: "bottom top",
             onEnter: () => {
-                // Hide Part 2
-                gsap.to(part2Ref.current, {
-                    opacity: 0,
-                    y: -50,
-                    duration: 0.2,
-                    ease: "power2.inOut"
-                })
-                // Show Part 3
-                showPartWithText(part3Ref.current, textSplits.part3, 0.8, 0.2)
+                hidePartWithText(part2Ref.current, textSplits.part2, 50, 0.15, 0);
+                showPartWithText(part3Ref.current, textSplits.part3, 0.8, 0.18);
             },
             onLeaveBack: () => {
-                // Reverse: Show Part 2
-                showPartWithText(part2Ref.current, textSplits.part2)
-                // Hide Part 3
-                hidePartWithText(part3Ref.current, textSplits.part3, 50, 0.2, 0.2)
+                showPartWithText(part2Ref.current, textSplits.part2, 0.6, 0.18);
+                hidePartWithText(part3Ref.current, textSplits.part3, 50, 0.15, 0);
             }
         })
 
@@ -170,23 +155,15 @@ const MoreThenMotion = () => {
             start: "bottom center",
             end: "bottom top",
             onEnter: () => {
-                // Hide Part 3
-                gsap.to(part3Ref.current, {
-                    opacity: 0,
-                    y: -50,
-                    duration: 0.2,
-                    ease: "power2.inOut"
-                })
-                // Show Part 4
-                showPartWithText(part4Ref.current, textSplits.part4, 0.8, 0.2)
+                hidePartWithText(part3Ref.current, textSplits.part3, 50, 0.15, 0);
+                showPartWithText(part4Ref.current, textSplits.part4, 0.8, 0.18);
             },
             onLeaveBack: () => {
-                // Reverse: Show Part 3
-                showPartWithText(part3Ref.current, textSplits.part3)
-                // Hide Part 4
-                hidePartWithText(part4Ref.current, textSplits.part4, 50, 0.2, 0.2)
+                showPartWithText(part3Ref.current, textSplits.part3, 0.6, 0.18);
+                hidePartWithText(part4Ref.current, textSplits.part4, 50, 0.15, 0);
             }
         })
+
 
         // Cleanup function
         return () => {
