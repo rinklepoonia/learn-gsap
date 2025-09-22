@@ -26,7 +26,7 @@ const MoreThenMotion = () => {
             opacity: 0,
             y: 50
         })
-        gsap.set(part1Ref.current, { opacity: 1, y: 0 })
+        gsap.set(part1Ref.current, { opacity: 1, y: "50%" })
 
         // Animation for Part 1 to Part 2 transition
         ScrollTrigger.create({
@@ -37,7 +37,7 @@ const MoreThenMotion = () => {
                 // Hide Part 1
                 gsap.to(part1Ref.current, {
                     opacity: 0,
-                    y: -50,
+                    y:"-100%",
                     duration: 0.8,
                     ease: "power2.inOut"
                 })
